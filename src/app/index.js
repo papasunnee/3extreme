@@ -18,8 +18,8 @@ module.exports = {
     packageInfo.dirname = caller();
     // console.log(packageInfo);
     const {
- name, graphQL, admin, services 
-} = packageInfo;
+      name, graphQL, admin, services,
+    } = packageInfo;
     if (graphQL) {
       if (graphQL.queries) {
         merge(queries, graphQL.queries);
