@@ -1,0 +1,61 @@
+{
+  "name": "keystonejs-graphql-compose-boilerplate",
+  "version": "0.0.0",
+  "private": true,
+  "author": "DavyBello <bellooladipupo41@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src",
+    "dev": "nodemon src/keystone.js",
+    "start": "NODE_ENV=production node src/keystone.js",
+    "test": "npm run test:int",
+    "test:int": "mocha --recursive --timeout 6000 --exit src/__tests__/init.js src/__tests__/int",
+    "test:unit": "mocha --recursive --timeout 6000 --exit src/__tests__/init.js src/**/__tests__/*.unit.spec.js",
+    "publish-schema": "node scripts/publishToApolloEngine"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm test"
+    }
+  },
+  "dependencies": {
+    "apollo-server": "^2.2.2",
+    "apollo-server-express": "^2.2.2",
+    "async": "2.1.4",
+    "caller": "^1.0.1",
+    "cors": "^2.8.5",
+    "cryptr": "^4.0.1",
+    "dotenv": "4.0.0",
+    "express-handlebars": "^3.0.0",
+    "express-jwt": "^5.3.1",
+    "graphql": "^14.0.2",
+    "graphql-compose": "^5.3.4",
+    "graphql-compose-connection": "^4.0.0",
+    "graphql-compose-mongoose": "^5.1.1",
+    "graphql-compose-pagination": "^4.0.0",
+    "jsonwebtoken": "^8.4.0",
+    "keystone": "4.0.0",
+    "keystone-email": "1.0.5",
+    "lodash": "^4.13.1",
+    "moment": "^2.22.2",
+    "passport": "^0.4.0",
+    "passport-google-token": "^0.1.2",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "require-all": "^3.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "husky": "^1.1.1",
+    "mocha": "^5.2.0",
+    "mongodb-memory-server": "^2.0.1",
+    "node-mocks-http": "^1.7.3",
+    "nodemon": "^1.14.12",
+    "prettier-eslint": "^8.8.2"
+  }
+}
