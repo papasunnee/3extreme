@@ -1,8 +1,8 @@
 {
-  "name": "keystonejs-graphql-compose-boilerplate",
+  "name": "3extremebackend",
   "version": "0.0.0",
   "private": true,
-  "author": "DavyBello <bellooladipupo41@gmail.com>",
+  "author": "AdetonaSunday",
   "license": "MIT",
   "scripts": {
     "lint": "eslint src",
@@ -13,12 +13,6 @@
     "test:int": "mocha --recursive --timeout 6000 --exit src/__tests__/init.js src/__tests__/int",
     "test:unit": "mocha --recursive --timeout 6000 --exit src/__tests__/init.js src/**/__tests__/*.unit.spec.js",
     "publish-schema": "node scripts/publishToApolloEngine"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm test"
-    }
   },
   "dependencies": {
     "apollo-server": "^2.2.2",

@@ -3,7 +3,7 @@ const { List, Field: { Types } } = require('keystone');
 
 /**
  * Admin Model
- * ==========
+ * ===========
  */
 const Admin = new List('Admin', {
   track: true,

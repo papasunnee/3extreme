@@ -5,6 +5,7 @@ const {
   mutations,
   subscriptions,
   typeComposers,
+  nav,
   _relationships,
 } = require('../graphQL');
 const coreServices = require('../lib/services');
@@ -16,7 +17,9 @@ module.exports = {
     // Mutate globals with package info
     packageInfo.dirname = caller();
     // console.log(packageInfo);
-    const { name, graphQL, services } = packageInfo;
+    const {
+ name, graphQL, admin, services 
+} = packageInfo;
     if (graphQL) {
       if (graphQL.queries) {
         merge(queries, graphQL.queries);
@@ -37,6 +40,10 @@ module.exports = {
           throw new Error('expected addRelatinship to be a function');
         }
       }
+    }
+
+    if (admin) {
+      merge(nav, admin.nav);
     }
 
     if (services) {

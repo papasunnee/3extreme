@@ -8,7 +8,7 @@ const MongodbMemoryServer = require('mongodb-memory-server');
 const { checkEnv } = require('../utils/initApp');
 
 keystone.init({
-  name: 'Keystonejs-graphql-compose-boilerplate',
+  name: 'backend',
   's3 config': {},
   headless: true,
 });

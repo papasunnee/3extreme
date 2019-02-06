@@ -7,9 +7,10 @@ const baseQueries = require('./core/queries');
 const baseMutations = require('./core/mutations');
 
 module.exports = {
-  typeComposers: { ...baseTypeComposers },
   queries: { ...baseQueries },
   mutations: { ...baseMutations },
-  subscriptions: { },
+  subscriptions: {},
+  typeComposers: { ...baseTypeComposers },
+  nav: {},
   _relationships: [],
 };

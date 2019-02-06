@@ -16,8 +16,8 @@ const mailgunUtils = require('./utils/mailgunUtils');
 // and documentation.
 
 keystone.init({
-  name: 'Keystonejs-graphql-compose-boilerplate',
-  brand: 'Keystonejs Graphql Compose Boilerplate',
+  name: '3extreme-backend',
+  brand: 'food app backend',
   // less: 'public',
   static: 'public',
   favicon: 'public/favicon.ico',
@@ -53,13 +53,10 @@ keystone.set('locals', {
 // Load your project's Routes
 keystone.set('routes', require('./routes'));
 
-
 // Configure the navigation bar in Keystone's Admin UI
-keystone.set('nav', {
-  // posts: ['Post', 'PostCategory'],
-  // users: 'User',
-  admins: 'Admin',
-});
+const { nav } = require('./graphQL');
+
+keystone.set('nav', nav);
 
 // Configure cloudinary
 // keystone.set('cloudinary config', process.env.CLOUDINARY_URL);
@@ -73,12 +70,7 @@ keystone.set('brandDetails', {
   emailLogoUrl: 'https://graphql-compose.github.io/img/logo.png',
 });
 
-
-checkEnv([
-  'JWT_SECRET',
-  'PASSWORD_VERSION_SECRET',
-  'CODEGEN_JWT_SECRET',
-]);
+checkEnv(['JWT_SECRET', 'PASSWORD_VERSION_SECRET', 'CODEGEN_JWT_SECRET']);
 
 mailgunUtils.checkMailgun();
 
@@ -91,7 +83,6 @@ keystone.start({
   // onStart: () => {
   //   const server = keystone.httpsServer
   //     ? keystone.httpsServer : keystone.httpServer;
-
   //   apolloServer.installSubscriptionHandlers(server);
   // },
 });
